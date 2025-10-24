@@ -47,6 +47,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        sentiment: {
+          positive: "hsl(var(--sentiment-positive))",
+          "positive-light": "hsl(var(--sentiment-positive-light))",
+          negative: "hsl(var(--sentiment-negative))",
+          "negative-light": "hsl(var(--sentiment-negative-light))",
+          neutral: "hsl(var(--sentiment-neutral))",
+          "neutral-light": "hsl(var(--sentiment-neutral-light))",
+          mixed: "hsl(var(--sentiment-mixed))",
+          "mixed-light": "hsl(var(--sentiment-mixed-light))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +67,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
       },
       borderRadius: {
         lg: "var(--radius)",
