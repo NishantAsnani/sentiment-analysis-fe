@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface SentimentCardProps {
   sentiment: "positive" | "negative" | "neutral" | "mixed";
   count: number;
-  percentage: number;
+  percentage: string;
   comments: string[];
 }
 

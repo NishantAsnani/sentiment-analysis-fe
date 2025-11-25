@@ -8,10 +8,10 @@ interface SentimentChartProps {
 }
 
 const COLORS = {
-  Positive: "hsl(var(--sentiment-positive))",
-  Negative: "hsl(var(--sentiment-negative))",
-  Neutral: "hsl(var(--sentiment-neutral))",
-  Mixed: "hsl(var(--sentiment-mixed))",
+  POSITIVE: "hsl(var(--sentiment-positive))",
+  NEGATIVE: "hsl(var(--sentiment-negative))",
+  NEUTRAL: "hsl(var(--sentiment-neutral))",
+  MIXED: "hsl(var(--sentiment-mixed))",
 };
 
 export const SentimentChart = ({ data }: SentimentChartProps) => {
@@ -29,7 +29,7 @@ export const SentimentChart = ({ data }: SentimentChartProps) => {
           fill="#8884d8"
           dataKey="value"
           animationBegin={0}
-          animationDuration={1000}
+          animationDuration={4000}
           paddingAngle={2}
         >
           {data.map((entry, index) => (
@@ -40,13 +40,13 @@ export const SentimentChart = ({ data }: SentimentChartProps) => {
             />
           ))}
         </Pie>
-        <Tooltip 
+        {/* <Tooltip 
           contentStyle={{ 
-            backgroundColor: "hsl(var(--card))", 
+            backgroundColor: "hsl(var(--card))",
             border: "1px solid hsl(var(--border))",
             borderRadius: "8px"
           }}
-        />
+        /> */}
         <Legend wrapperStyle={{ paddingTop: "20px" }} />
       </PieChart>
     </ResponsiveContainer>

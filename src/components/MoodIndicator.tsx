@@ -2,30 +2,30 @@ import { Smile, Frown, Meh, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface MoodIndicatorProps {
-  sentiment: "positive" | "negative" | "neutral" | "mixed";
+  sentiment: "POSITIVE" | "NEGATIVE" | "NEUTRAL" | "MIXED";
   score: number;
 }
 
 const moodConfig = {
-  positive: {
+  POSITIVE: {
     icon: Smile,
     label: "Positive Mood",
     colorClass: "text-sentiment-positive",
     bgClass: "bg-sentiment-positive-light",
   },
-  negative: {
+  NEGATIVE: {
     icon: Frown,
     label: "Negative Mood",
     colorClass: "text-sentiment-negative",
     bgClass: "bg-sentiment-negative-light",
   },
-  neutral: {
+  NEUTRAL: {
     icon: Meh,
     label: "Neutral Mood",
     colorClass: "text-sentiment-neutral",
     bgClass: "bg-sentiment-neutral-light",
   },
-  mixed: {
+  MIXED: {
     icon: AlertCircle,
     label: "Mixed Mood",
     colorClass: "text-sentiment-mixed",

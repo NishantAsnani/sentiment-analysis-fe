@@ -53,7 +53,7 @@ export const UrlDropzone = ({ onUrlDrop, className }: UrlDropzoneProps) => {
         </span>
         <div className="flex gap-2">
           <Youtube className="w-4 h-4 text-red-500" />
-          <Twitter className="w-4 h-4 text-blue-400" />
+          {/* <Twitter className="w-4 h-4 text-blue-400" /> */}
         </div>
       </div>
     </div>
