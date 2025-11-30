@@ -17,8 +17,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { UrlDropzone } from "@/components/UrlDropzone";
 import { Search, Youtube, Twitter, Sparkles } from "lucide-react";
 import { toast } from "sonner";
-
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Index = () => {
   const [url, setUrl] = useState("https://youtube.com/watch?v=example");
@@ -96,7 +95,7 @@ const Index = () => {
     try {
       // Make API call to your backend
       const response = await fetch(
-        "http://localhost:3000/api/batch-analyze-sentiment",
+        `${backendUrl}/api/batch-analyze-sentiment`,
         {
           method: "POST",
           headers: {
