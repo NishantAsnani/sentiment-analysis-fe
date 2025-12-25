@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
+# Sentiment Analysis — Frontend ✅
 
-## Project info
+A minimal React + Vite frontend that visualizes YouTube sentiment analysis results from the companion backend.
 
-**URL**: https://lovable.dev/projects/d9ebb415-1c20-4dd4-a241-753004ff7a58
+---
 
-## How can I edit this code?
+## 🔧 Features
 
-There are several ways of editing your application.
+- Analyze YouTube or Twitter comments and visualize sentiment distribution, trends, and keywords
+- Example comments (positive/negative/neutral/mixed) and word cloud
+- Integrates with the backend API which uses AWS Comprehend for sentiment detection
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d9ebb415-1c20-4dd4-a241-753004ff7a58) and start prompting.
+## ⚙️ Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v14+ recommended)
+- npm or pnpm
+- A running instance of the backend (see **Backend** below)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Install & Run
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone <your-repo-url>
+cd sentiment-analysis-fe
+npm install
+# create a .env in project root (see Environment variables section)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open http://localhost:5173 in your browser (Vite default).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🔐 Environment variables
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Create a `.env` file in the project root (do NOT commit secrets) with at least:
 
-## What technologies are used for this project?
+- `VITE_BACKEND_URL` — the base URL of the backend API used by the frontend.
 
-This project is built with:
+Example `.env`:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```env
+VITE_BACKEND_URL=http://localhost:3000
+```
 
-## How can I deploy this project?
+**Important:** The backend exposes a `PORT` (default `3000`). Make sure the port in `VITE_BACKEND_URL` matches the backend `PORT`. If you change the backend `PORT`, update `VITE_BACKEND_URL` accordingly.
 
-Simply open [Lovable](https://lovable.dev/projects/d9ebb415-1c20-4dd4-a241-753004ff7a58) and click on Share -> Publish.
+Tip: Add an `.env.sample` with the example above for contributors (do not add real secrets).
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🔗 Backend
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This frontend expects the backend implemented here:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+https://github.com/NishantAsnani/sentiment-analysis-be
+
+See the backend README for required backend ENV vars such as `GOOGLE_AUTH_KEY`, AWS credentials, and `PORT`.
+
+---
+
+## 📦 API (overview)
+
+The frontend calls `POST /api/batch-analyze-sentiment` with a body like:
+
+```json
+{ "url": "https://www.youtube.com/watch?v=VIDEO_ID" }
+```
+
+The response contains `results` with `sentimentDistribution`, `overallSentiment`, `overallScore`, `comments`, `keywords`, and `totalCount`.
+
+---
+
+## 🤝 Contributing
+
+- Open issues and PRs for bugs and enhancements
+- Do not commit secrets or credentials
+
